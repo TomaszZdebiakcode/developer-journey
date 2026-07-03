@@ -1,7 +1,11 @@
+import Hero from "@/components/sections/Hero";
+import MissionStatus from "@/components/sections/MissionStatus";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Hello, Developer Journey 👋</h1>
+    <main className="min-h-screen bg-zinc-950">
+      <Hero />
+      <MissionStatus />
     </main>
   );
 }
