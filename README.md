@@ -5,18 +5,25 @@
 
 An interactive portfolio built with:
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
+Next.js • React • TypeScript • TailwindCSS
 
-## Mission
+## 🎯 Mission Status
 
 Current Objective
-Become a Software Engineer.
+→ Become a Software Engineer
 
 Side Quest
-Help people create beautiful gardens.
+→ Help people create beautiful gardens
 
 Next Expansion
-Build products that make life easier.
+→ Build products that make life easier
+
+## ✨ Planned Features
+
+- Animated Hero Section
+- Interactive Skill Tree
+- Quest Log
+- Achievement System
+- GitHub API Integration
+- Dark / Light Mode
+- Fully Responsive Design
