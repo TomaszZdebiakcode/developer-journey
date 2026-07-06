@@ -5,6 +5,7 @@ import SkillTree from "@/components/sections/SkillTree";
 import BossBattles from "@/components/sections/BossBattles";
 import Inventory from "@/components/sections/Inventory";
 import Achievements from "@/components/sections/Achievements";
+import QuestLog from "@/components/sections/QuestLog";
 
 export default function Home() {
   return (
@@ -29,6 +30,8 @@ export default function Home() {
       <Inventory />
 
       <Achievements />
+
+      <QuestLog />
 
     </main>
   );
