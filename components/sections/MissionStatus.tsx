@@ -3,6 +3,7 @@ import { Flag, Target, Sprout, Compass } from "lucide-react";
 export default function MissionStatus() {
   return (
     <section
+      id="mission"
       className="
     w-full
     max-w-md

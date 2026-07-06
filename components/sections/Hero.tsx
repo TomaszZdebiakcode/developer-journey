@@ -1,5 +1,24 @@
+"use client";
+
+import DeveloperCard from "@/components/shared/DeveloperCard";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { Swords, ArrowRight } from "lucide-react";
 export default function Hero() {
+
+    const [adventureStarted, setAdventureStarted] = useState(false);
+
+    const startAdventure = () => {
+        setAdventureStarted(true);
+
+        document
+            .getElementById("mission")
+            ?.scrollIntoView({
+                behavior: "smooth",
+            });
+    };
+
     return (
         <section className="flex min-h-screen flex-col items-center justify-center text-center">
             <p className="mb-6 flex items-center justify-center gap-3 text-zinc-400">
@@ -23,35 +42,36 @@ export default function Hero() {
                 One quest at a time.
             </p>
             <button
+                onClick={startAdventure}
                 className="
-    mt-6
-    group
-    relative
-    h-14
-    w-64
-    rounded-xl
-    bg-violet-500
-    font-semibold
-    text-white
-    transition-all
-    duration-300
-    hover:-translate-y-1
-    hover:shadow-2xl
-    hover:shadow-violet-500/20
-"
+        mt-6
+        group
+        relative
+        h-14
+        w-64
+        rounded-xl
+        bg-violet-500
+        font-semibold
+        text-white
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:shadow-2xl
+        hover:shadow-violet-500/20
+    "
             >
                 <span
                     className="
-        absolute
-        inset-0
-        flex
-        items-center
-        justify-center
-        gap-2
-        transition-opacity
-        duration-300
-        group-hover:opacity-0
-    "
+            absolute
+            inset-0
+            flex
+            items-center
+            justify-center
+            gap-2
+            transition-opacity
+            duration-300
+            group-hover:opacity-0
+        "
                 >
                     <Swords className="h-5 w-5" />
                     Continue Adventure
@@ -59,17 +79,17 @@ export default function Hero() {
 
                 <span
                     className="
-        absolute
-        inset-0
-        flex
-        items-center
-        justify-center
-        gap-2
-        opacity-0
-        transition-opacity
-        duration-300
-        group-hover:opacity-100
-    "
+            absolute
+            inset-0
+            flex
+            items-center
+            justify-center
+            gap-2
+            opacity-0
+            transition-opacity
+            duration-300
+            group-hover:opacity-100
+        "
                 >
                     <ArrowRight className="h-5 w-5" />
                     View Boss Battles
@@ -81,6 +101,7 @@ export default function Hero() {
             >
                 Read My Story →
             </a>
+            <DeveloperCard started={adventureStarted} />
         </section>
     );
 }

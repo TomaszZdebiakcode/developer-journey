@@ -49,7 +49,7 @@ const quests = [
         title: "First Client Website",
         description:
             "Working towards delivering my first commercial website for a paying client.",
-        status: "current",
+        status: "completed",
         icon: Briefcase,
     },
     {
@@ -57,7 +57,7 @@ const quests = [
         title: "First Software Engineering Job",
         description:
             "Join a professional software engineering team and continue growing as a developer.",
-        status: "locked",
+        status: "current",
         icon: Flag,
     },
     {
