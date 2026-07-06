@@ -1,3 +1,4 @@
+import { Swords, ArrowRight } from "lucide-react";
 export default function Hero() {
     return (
         <section className="flex min-h-screen flex-col items-center justify-center text-center">
@@ -23,51 +24,55 @@ export default function Hero() {
             </p>
             <button
                 className="
-                mt-6
-                group
-                relative
-                w-64
-                h-14
-                rounded-xl
-                bg-violet-500
-                text-white
-                font-semibold
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:shadow-2xl
-                hover:shadow-violet-500/20
-            "
+    mt-6
+    group
+    relative
+    h-14
+    w-64
+    rounded-xl
+    bg-violet-500
+    font-semibold
+    text-white
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-2xl
+    hover:shadow-violet-500/20
+"
             >
                 <span
                     className="
-                absolute
-                inset-0
-                flex
-                items-center
-                justify-center
-                transition-opacity
-                duration-300
-                group-hover:opacity-0
-                "
+        absolute
+        inset-0
+        flex
+        items-center
+        justify-center
+        gap-2
+        transition-opacity
+        duration-300
+        group-hover:opacity-0
+    "
                 >
-                    🌌 Continue Adventure
+                    <Swords className="h-5 w-5" />
+                    Continue Adventure
                 </span>
 
                 <span
                     className="
-                absolute
-                inset-0
-                flex
-                items-center
-                justify-center
-                opacity-0
-                transition-opacity
-                duration-300
-                group-hover:opacity-100
-                "
+        absolute
+        inset-0
+        flex
+        items-center
+        justify-center
+        gap-2
+        opacity-0
+        transition-opacity
+        duration-300
+        group-hover:opacity-100
+    "
                 >
-                    🚀 View Projects
+                    <ArrowRight className="h-5 w-5" />
+                    View Boss Battles
                 </span>
             </button>
             <a

@@ -3,6 +3,8 @@ import MissionStatus from "@/components/sections/MissionStatus";
 import About from "@/components/sections/About";
 import SkillTree from "@/components/sections/SkillTree";
 import BossBattles from "@/components/sections/BossBattles";
+import Inventory from "@/components/sections/Inventory";
+import Achievements from "@/components/sections/Achievements";
 
 export default function Home() {
   return (
@@ -22,7 +24,11 @@ export default function Home() {
 
       <SkillTree />
 
-      <BossBattles />
+      <BossBattles />\
+
+      <Inventory />
+
+      <Achievements />
 
     </main>
   );
