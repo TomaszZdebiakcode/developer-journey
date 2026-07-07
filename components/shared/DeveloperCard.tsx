@@ -12,23 +12,31 @@ export default function DeveloperCard({
     return (
         <div
             className={`
-                fixed
-                bottom-8
-                right-8
-                z-50
-                hidden
-                xl:block
-                transition-all
-                duration-700
-                ease-out
-                ${started
+    fixed
+    z-50
+
+    bottom-4
+    left-4
+    right-4
+
+    xl:left-auto
+    xl:right-8
+    xl:bottom-8
+
+    transition-all
+    duration-700
+    ease-out
+
+    ${started
                     ? "translate-y-0 opacity-100"
                     : "translate-y-40 opacity-0 pointer-events-none"
                 }
-            `}
+`}
         >
             <div
                 className="
+                 w-full
+        xl:w-auto
                     overflow-hidden
                     rounded-2xl
                     border
@@ -51,13 +59,7 @@ export default function DeveloperCard({
                         alt="Tomasz Zdebiak"
                         width={56}
                         height={56}
-                        className="
-                            h-14
-                            w-14
-                            rounded-xl
-                            object-cover
-                            object-[center_5%]
-                        "
+                        className="h-14 w-14 rounded-xl object-cover object-[center_5%]"
                     />
 
                     <div>
