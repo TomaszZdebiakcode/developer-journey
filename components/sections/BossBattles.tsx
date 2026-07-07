@@ -50,7 +50,7 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/projects/developer-journey.png"
+                                src="/images/developer-journey.png"
                                 alt="Developer Journey"
                                 className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                             />
@@ -97,7 +97,7 @@ export default function BossBattles() {
                                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                                    
+
 
                                 </div>
 
@@ -229,9 +229,9 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/projects/slimter.png"
+                                src="/images/slimter.png"
                                 alt="Slimter"
-                                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                                className="h-full w-full object-cover object-[40%_center] transition duration-700 group-hover:scale-105"
                             />
 
                         </div>
@@ -353,9 +353,9 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/projects/warehouse.png"
+                                src="/images/warehouse.png"
                                 alt="Warehouse Pathfinder"
-                                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                                className="h-full w-full object-cover object-[33%_center] transition duration-700 group-hover:scale-105"
                             />
 
                         </div>
