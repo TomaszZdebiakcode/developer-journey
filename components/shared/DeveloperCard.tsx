@@ -55,7 +55,7 @@ export default function DeveloperCard({
                 <div className="flex items-center gap-4 px-5 py-4">
 
                     <Image
-                        src="/images/profile.jpg"
+                        src="/images/profile.webp"
                         alt="Tomasz Zdebiak"
                         width={56}
                         height={56}

@@ -28,7 +28,7 @@ export default function Home() {
 
       <SkillTree />
 
-      <BossBattles />\
+      <BossBattles />
 
       <Inventory />
 

@@ -50,7 +50,7 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/images/developer-journey.png"
+                                src="/images/developer-journey.webp"
                                 alt="Developer Journey"
                                 className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                             />
@@ -229,7 +229,7 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/images/slimter.png"
+                                src="/images/slimter.webp"
                                 alt="Slimter"
                                 className="h-full w-full object-cover object-[40%_center] transition duration-700 group-hover:scale-105"
                             />
@@ -353,7 +353,7 @@ export default function BossBattles() {
                         <div className="overflow-hidden">
 
                             <img
-                                src="/images/warehouse.png"
+                                src="/images/warehouse.webp"
                                 alt="Warehouse Pathfinder"
                                 className="h-full w-full object-cover object-[33%_center] transition duration-700 group-hover:scale-105"
                             />

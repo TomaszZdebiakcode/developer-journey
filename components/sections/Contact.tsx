@@ -17,8 +17,16 @@ export default function Contact() {
                     Final Boss
                 </p>
 
-                <h2 className="text-6xl font-bold text-white">
-                    Let's Build Something Great.
+                <h2 className="text-5xl font-bold leading-[0.9] tracking-tight text-white sm:text-6xl">
+                    Let's Build{" "}
+                    <span className="sm:hidden">
+                        <br />
+                    </span>
+                    Some
+                    <span className="sm:hidden">
+                        <br />
+                    </span>
+                    thing Great.
                 </h2>
 
                 <p className="mt-8 max-w-3xl text-lg leading-8 text-zinc-400">

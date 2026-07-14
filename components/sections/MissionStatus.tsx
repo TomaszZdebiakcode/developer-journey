@@ -5,6 +5,7 @@ export default function MissionStatus() {
     <section
       id="mission"
       className="
+      scroll-mt-24
     w-full
     max-w-md
     lg:max-w-none
