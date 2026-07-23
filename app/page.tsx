@@ -2,7 +2,7 @@ import Hero from "@/components/sections/Hero";
 import MissionStatus from "@/components/sections/MissionStatus";
 import About from "@/components/sections/About";
 import SkillTree from "@/components/sections/SkillTree";
-import BossBattles from "@/components/sections/BossBattles";
+import BossBattles from "@/components/boss/BossBattles";
 import Inventory from "@/components/sections/Inventory";
 import Achievements from "@/components/sections/Achievements";
 import QuestLog from "@/components/sections/QuestLog";

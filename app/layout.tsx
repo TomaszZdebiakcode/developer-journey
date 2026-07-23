@@ -1,6 +1,9 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
+import Navbar from "@/components/layout/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,21 +17,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tomasz Zdebiak | Software Engineer",
-  description:
-    "Developer Journey - Portfolio of Tomasz Zdebiak, Game Software Engineering student building real-world projects with React, Next.js and TypeScript.",
+  description: "Developer Journey",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
