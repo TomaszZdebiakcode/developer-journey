@@ -23,29 +23,17 @@ type Skill = {
 type BossProject = {
     boss: string;
     status: string;
-
     name: string;
-
     description: string;
-
     difficulty: number;
-
     image: string;
-
     imagePosition?: string;
-
     rewardsTitle: string;
-
     skills: Skill[];
-
     battleButton: string;
-
     hoverButton: string;
-
     sourceButton: string;
-
     href: string;
-
     github: string;
 };
 
@@ -73,84 +61,76 @@ const icons = {
 export default function BossCard({ project }: Props) {
     return (
         <div className="group overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:bg-zinc-800/40 hover:shadow-2xl hover:shadow-violet-500/10">
-
             <div className="grid lg:grid-cols-2">
-
                 {/* Image */}
 
                 <div className="overflow-hidden">
                     <img
                         src={project.image}
                         alt={project.name}
-                        className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${project.imagePosition ?? ""
-                            }`}
+                        className={`aspect-video h-full w-full object-cover transition duration-700 group-hover:scale-105 lg:aspect-auto ${project.imagePosition ?? ""}`}
                     />
                 </div>
 
                 {/* Content */}
 
-                <div className="flex flex-col justify-center p-10">
+                <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+                    {/* Header */}
 
-                    <div className="mb-6 flex items-center justify-between">
-
-                        <span className="rounded-full bg-violet-500/10 px-4 py-2 text-sm font-semibold text-violet-400">
+                    <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <span className="w-fit rounded-full bg-violet-500/10 px-4 py-2 text-xs font-semibold text-violet-400 sm:text-sm">
                             ⚔ {project.boss}
                         </span>
 
-                        <span className="rounded-full bg-green-500/10 px-4 py-2 text-sm font-semibold text-green-400">
+                        <span className="w-fit rounded-full bg-green-500/10 px-4 py-2 text-xs font-semibold text-green-400 sm:text-sm">
                             ✔ {project.status}
                         </span>
-
                     </div>
 
-                    <h3 className="text-4xl font-bold text-white">
+                    {/* Title */}
+
+                    <h3 className="break-words text-3xl font-bold leading-tight text-white lg:text-4xl">
                         {project.name}
                     </h3>
 
-                    <p className="mt-6 text-lg leading-8 text-zinc-400">
+                    {/* Description */}
+
+                    <p className="mt-6 break-words text-base leading-8 text-zinc-400 sm:text-lg">
                         {project.description}
                     </p>
 
                     {/* Difficulty */}
 
                     <div className="mt-8">
-
-                        <p className="mb-3 text-sm uppercase tracking-widest text-zinc-500">
+                        <p className="mb-3 text-xs uppercase tracking-widest text-zinc-500 sm:text-sm">
                             Difficulty
                         </p>
 
                         <div className="flex gap-1">
-
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Star
                                     key={star}
                                     className={`h-5 w-5 ${star <= project.difficulty
-                                        ? "fill-yellow-400 text-yellow-400"
-                                        : "text-zinc-600"
+                                            ? "fill-yellow-400 text-yellow-400"
+                                            : "text-zinc-600"
                                         }`}
                                 />
                             ))}
-
                         </div>
-
                     </div>
 
                     {/* Rewards */}
 
                     <div className="mt-10">
-
                         <div className="mb-4 flex items-center gap-2">
+                            <Trophy className="h-5 w-5 shrink-0 text-yellow-400" />
 
-                            <Trophy className="h-5 w-5 text-yellow-400" />
-
-                            <h4 className="font-semibold text-white">
+                            <h4 className="break-words font-semibold text-white">
                                 {project.rewardsTitle}
                             </h4>
-
                         </div>
 
                         <div className="flex flex-wrap gap-3">
-
                             {project.skills.map((skill) => {
                                 const Icon =
                                     icons[skill.icon as keyof typeof icons];
@@ -158,33 +138,30 @@ export default function BossCard({ project }: Props) {
                                 return (
                                     <span
                                         key={skill.label}
-                                        className="flex items-center gap-2 rounded-full bg-zinc-800 px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:bg-zinc-700 hover:scale-105"
+                                        className="flex items-center gap-2 rounded-full bg-zinc-800 px-4 py-2 text-xs text-zinc-300 transition-all duration-300 hover:scale-105 hover:bg-zinc-700 sm:text-sm"
                                     >
                                         {Icon && (
-                                            <Icon className="h-4 w-4 text-violet-400" />
+                                            <Icon className="h-4 w-4 shrink-0 text-violet-400" />
                                         )}
 
                                         {skill.label}
                                     </span>
                                 );
                             })}
-
                         </div>
-
                     </div>
 
                     {/* Buttons */}
 
-                    <div className="mt-10 flex flex-wrap gap-4">
-
+                    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                         <a
                             href={project.href}
                             className="
                 group
                 relative
-                inline-flex
+                flex
                 h-14
-                w-64
+                w-full
                 items-center
                 justify-center
                 overflow-hidden
@@ -198,9 +175,9 @@ export default function BossCard({ project }: Props) {
                 hover:bg-violet-400
                 hover:shadow-2xl
                 hover:shadow-violet-500/20
+                sm:w-64
               "
                         >
-
                             <span className="absolute flex items-center gap-2 transition-all duration-300 group-hover:translate-y-6 group-hover:opacity-0">
                                 ⚔ {project.battleButton}
                             </span>
@@ -208,25 +185,19 @@ export default function BossCard({ project }: Props) {
                             <span className="absolute flex translate-y-6 items-center gap-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                                 ▶ {project.hoverButton}
                             </span>
-
                         </a>
 
                         <a
                             href={project.github}
-                            className="flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 text-white transition hover:border-violet-400"
+                            className="flex h-14 w-full items-center justify-center gap-2 rounded-xl border border-zinc-700 px-6 text-white transition hover:border-violet-400 sm:w-auto"
                         >
-                            <Code2 size={18} />
+                            <Code2 className="h-5 w-5 shrink-0" />
 
                             {project.sourceButton}
-
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     );
 }

@@ -7,7 +7,7 @@ export default function BossBattles() {
     const { t } = useLanguage();
 
     return (
-        <section className="mx-auto max-w-7xl px-6 py-32">
+        <section id="projects" className="mx-auto max-w-7xl px-6 py-32">
             <div className="mb-20">
                 <p className="mb-3 text-sm uppercase tracking-[0.3em] text-violet-400">
                     {t.bossBattles.section}

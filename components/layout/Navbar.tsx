@@ -14,7 +14,7 @@ export default function Navbar() {
 
     const links = [
         { key: "about", href: "#about", label: t.navbar.about },
-        { key: "skills", href: "#skills", label: t.navbar.skills },
+        { key: "inventory", href: "#inventory", label: t.navbar.inventory },
         { key: "projects", href: "#projects", label: t.navbar.projects },
         { key: "contact", href: "#contact", label: t.navbar.contact },
     ];

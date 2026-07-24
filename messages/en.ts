@@ -1,7 +1,7 @@
 const en = {
     navbar: {
         about: "About",
-        skills: "Skills",
+        inventory: "Inventory",
         projects: "Projects",
         contact: "Contact",
     },

@@ -1,7 +1,7 @@
 const de = {
     navbar: {
         about: "Über mich",
-        skills: "Fähigkeiten",
+        inventory: "Inventar",
         projects: "Projekte",
         contact: "Kontakt",
     },

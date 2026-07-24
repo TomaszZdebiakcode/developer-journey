@@ -1,7 +1,7 @@
 const pl = {
     navbar: {
         about: "O mnie",
-        skills: "Umiejętności",
+        inventory: "Ekwipunek",
         projects: "Projekty",
         contact: "Kontakt",
     },

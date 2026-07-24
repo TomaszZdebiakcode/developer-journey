@@ -17,93 +17,97 @@ import {
 
 import { useLanguage } from "@/context/LanguageContext";
 
+const frontend = [
+    { icon: Atom, text: "React" },
+    { icon: Layers3, text: "Next.js" },
+    { icon: Palette, text: "Tailwind CSS" },
+    { icon: MonitorSmartphone, text: "Responsive UI" },
+];
+
+const backend = [
+    { icon: Code2, text: "Python" },
+    { icon: Brain, text: "Java" },
+    { icon: Database, text: "PostgreSQL" },
+    { icon: Terminal, text: "REST APIs" },
+];
+
+const tools = [
+    { icon: GitBranch, text: "Git" },
+    { icon: GitFork, text: "GitHub" },
+    { icon: PenTool, text: "Figma" },
+    { icon: Globe, text: "WordPress" },
+];
+
 export default function Inventory() {
     const { t } = useLanguage();
 
     return (
-        <section className="mx-auto max-w-7xl px-6 py-32">
-            <div className="mb-20">
+        <section id="inventory" className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+            <div className="mb-16 lg:mb-20">
                 <p className="mb-3 text-sm uppercase tracking-[0.3em] text-violet-400">
                     {t.inventory.section}
                 </p>
 
-                <h2 className="text-6xl font-bold text-white">
+                <h2 className="max-w-4xl break-words text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                     {t.inventory.title}
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+                <p className="mt-6 max-w-2xl break-words text-base leading-8 text-zinc-400 sm:text-lg">
                     {t.inventory.description}
                 </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-                {/* Frontend */}
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 lg:gap-8">
+                <Category title={t.inventory.frontend} skills={frontend} />
 
-                <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-violet-500/40">
-                    <h3 className="mb-8 text-2xl font-bold text-white">
-                        {t.inventory.frontend}
-                    </h3>
+                <Category title={t.inventory.backend} skills={backend} />
 
-                    <div className="space-y-4">
-                        <Skill icon={<Atom className="h-5 w-5 text-violet-400" />} text="React" />
+                <Category title={t.inventory.tools} skills={tools} />
 
-                        <Skill icon={<Layers3 className="h-5 w-5 text-violet-400" />} text="Next.js" />
-
-                        <Skill icon={<Palette className="h-5 w-5 text-violet-400" />} text="Tailwind CSS" />
-
-                        <Skill icon={<MonitorSmartphone className="h-5 w-5 text-violet-400" />} text="Responsive UI" />
-                    </div>
-                </div>
-
-                {/* Backend */}
-
-                <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-violet-500/40">
-                    <h3 className="mb-8 text-2xl font-bold text-white">
-                        {t.inventory.backend}
-                    </h3>
-
-                    <div className="space-y-4">
-                        <Skill icon={<Code2 className="h-5 w-5 text-violet-400" />} text="Python" />
-
-                        <Skill icon={<Brain className="h-5 w-5 text-violet-400" />} text="Java" />
-
-                        <Skill icon={<Database className="h-5 w-5 text-violet-400" />} text="PostgreSQL" />
-
-                        <Skill icon={<Terminal className="h-5 w-5 text-violet-400" />} text="REST APIs" />
-                    </div>
-                </div>
-
-                {/* Tools */}
-
-                <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-violet-500/40">
-                    <h3 className="mb-8 text-2xl font-bold text-white">
-                        {t.inventory.tools}
-                    </h3>
-
-                    <div className="space-y-4">
-                        <Skill icon={<GitBranch className="h-5 w-5 text-violet-400" />} text="Git" />
-
-                        <Skill icon={<GitFork className="h-5 w-5 text-violet-400" />} text="GitHub" />
-
-                        <Skill icon={<PenTool className="h-5 w-5 text-violet-400" />} text="Figma" />
-
-                        <Skill icon={<Globe className="h-5 w-5 text-violet-400" />} text="WordPress" />
-                    </div>
-                </div>
-
-                {/* Current Quest */}
-
-                <div className="rounded-3xl border border-violet-500/30 bg-violet-500/10 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2">
-                    <h3 className="mb-8 text-2xl font-bold text-white">
+                <div className="rounded-3xl border border-violet-500/30 bg-violet-500/10 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 md:p-8">
+                    <h3 className="mb-6 break-words text-2xl font-bold leading-tight text-white">
                         {t.inventory.currentQuest}
                     </h3>
 
-                    <p className="leading-8 text-zinc-300">
+                    <p className="break-words text-base leading-8 text-zinc-300 sm:text-lg">
                         {t.inventory.currentQuestDescription}
                     </p>
                 </div>
             </div>
         </section>
+    );
+}
+
+function Category({
+    title,
+    skills,
+}: {
+    title: string;
+    skills: {
+        icon: React.ElementType;
+        text: string;
+    }[];
+}) {
+    return (
+        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 md:p-8">
+            <h3 className="mb-6 break-words text-2xl font-bold leading-tight text-white">
+                {title}
+            </h3>
+
+            <div className="space-y-4">
+                {skills.map((skill) => {
+                    const Icon = skill.icon;
+
+                    return (
+                        <Skill
+                            key={skill.text}
+                            icon={<Icon className="h-5 w-5 text-violet-400" />}
+                            text={skill.text}
+                        />
+                    );
+                })}
+            </div>
+        </div>
     );
 }
 
@@ -116,9 +120,11 @@ function Skill({
 }) {
     return (
         <div className="flex items-center gap-3 rounded-xl bg-zinc-800/70 px-4 py-3 transition-all duration-300 hover:translate-x-2 hover:bg-zinc-700">
-            {icon}
+            <div className="shrink-0">{icon}</div>
 
-            <span className="text-zinc-200">{text}</span>
+            <span className="break-words text-sm text-zinc-200 sm:text-base">
+                {text}
+            </span>
         </div>
     );
 }
