@@ -3,7 +3,7 @@ const en = {
         about: "About",
         inventory: "Inventory",
         projects: "Projects",
-        contact: "Contact",
+        contact: "Let's Talk",
     },
 
     hero: {

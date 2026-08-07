@@ -3,7 +3,7 @@ const pl = {
         about: "O mnie",
         inventory: "Ekwipunek",
         projects: "Projekty",
-        contact: "Kontakt",
+        contact: "Porozmawiajmy",
     },
 
     hero: {

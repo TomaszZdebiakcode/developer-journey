@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Swords } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
@@ -14,22 +14,31 @@ export default function Hero() {
     const startAdventure = () => {
         setAdventureStarted(true);
 
-        const section = document.getElementById("mission");
+        const section = document.getElementById("projects");
 
         if (!section) return;
 
-        const offset = 128; // wysokość navbara + trochę odstępu
-
-        const y =
-            section.getBoundingClientRect().top +
-            window.pageYOffset -
-            offset;
-
-        window.scrollTo({
-            top: y,
+        section.scrollIntoView({
             behavior: "smooth",
         });
-    };
+    };;
+
+    useEffect(() => {
+        if (adventureStarted) return;
+
+        const activate = () => {
+            if (window.scrollY > 50) {
+                setAdventureStarted(true);
+                window.removeEventListener("scroll", activate);
+            }
+        };
+
+        window.addEventListener("scroll", activate, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", activate);
+        };
+    }, [adventureStarted]);
 
     return (
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
@@ -126,12 +135,28 @@ export default function Hero() {
             </button>
 
             {/* Story */}
-            <a
-                href="#projects"
+            <button
+                onClick={() => {
+                    const section = document.getElementById("mission");
+
+                    if (!section) return;
+
+                    const offset = 128;
+
+                    const y =
+                        section.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        offset;
+
+                    window.scrollTo({
+                        top: y,
+                        behavior: "smooth",
+                    });
+                }}
                 className="relative z-10 mt-6 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
             >
                 {t.hero.story} →
-            </a>
+            </button>
 
             {/* Developer Card */}
             <div className="relative z-10 mt-12 w-full max-w-md px-2 sm:max-w-none sm:px-0">

@@ -16,23 +16,37 @@ export default function Navbar() {
         { key: "about", href: "#about", label: t.navbar.about },
         { key: "inventory", href: "#inventory", label: t.navbar.inventory },
         { key: "projects", href: "#projects", label: t.navbar.projects },
-        { key: "contact", href: "#contact", label: t.navbar.contact },
     ];
 
     return (
         <header className="fixed top-0 left-0 z-50 w-full">
             <div className="mx-auto max-w-7xl px-4">
-                <nav className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-6 py-4 backdrop-blur-xl">
+                <nav className="
+    mt-4
+    flex items-center justify-between
+
+    lg:grid
+    lg:grid-cols-[420px_1fr_420px]
+    lg:items-center
+
+    rounded-2xl
+    border border-white/10
+    bg-black/40
+    px-6 py-4
+    backdrop-blur-xl
+">
                     {/* Logo */}
-                    <Link
-                        href="/"
-                        className="text-xl font-bold tracking-wide text-white transition hover:text-violet-400"
-                    >
-                        Tomasz<span className="text-violet-400">.</span>
-                    </Link>
+                    <div className="justify-self-start">
+                        <Link
+                            href="/"
+                            className="text-xl font-bold tracking-wide text-white transition hover:text-violet-400"
+                        >
+                            Tomasz Zdebiak<span className="text-violet-400">.</span>
+                        </Link>
+                    </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-8 md:flex">
+                    <div className="hidden justify-self-center md:flex md:items-center md:gap-8">
                         {links.map((link) => (
                             <a
                                 key={link.key}
@@ -45,7 +59,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Right Side */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-self-end gap-4">
                         {/* Language */}
                         <div className="hidden md:block">
                             <LanguageSwitcher />
@@ -65,7 +79,11 @@ export default function Navbar() {
                             className="text-3xl transition-transform duration-300 hover:scale-110 md:hidden"
                             aria-label="Toggle menu"
                         >
-                            {isOpen ? <GiFrenchFries /> : <GiHamburger />}
+                            {isOpen ? (
+                                <GiFrenchFries className="text-white" />
+                            ) : (
+                                <GiHamburger className="text-white" />
+                            )}
                         </button>
                     </div>
                 </nav>

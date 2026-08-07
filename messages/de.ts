@@ -3,7 +3,7 @@ const de = {
         about: "Über mich",
         inventory: "Inventar",
         projects: "Projekte",
-        contact: "Kontakt",
+        contact: "Kontakt aufnehmen",
     },
 
     hero: {
