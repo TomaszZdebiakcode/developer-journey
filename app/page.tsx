@@ -7,13 +7,13 @@ import Inventory from "@/components/sections/Inventory";
 import Achievements from "@/components/sections/Achievements";
 import QuestLog from "@/components/sections/QuestLog";
 import Contact from "@/components/sections/Contact";
-
+import HashScrollHandler from "@/components/utils/HashScrollHandler";
 
 
 export default function Home() {
   return (
     <main className="bg-zinc-950 text-white">
-
+      <HashScrollHandler />
       <Hero />
 
       <section className="mx-auto max-w-7xl px-6 py-32">

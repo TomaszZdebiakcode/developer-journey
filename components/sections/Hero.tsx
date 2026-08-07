@@ -1,27 +1,25 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowRight, Swords } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
 import DeveloperCard from "@/components/shared/DeveloperCard";
+import {
+    smoothScrollTo,
+    smoothScrollToSection,
+} from "@/components/utils/smoothScroll";
 
 export default function Hero() {
     const [adventureStarted, setAdventureStarted] = useState(false);
 
     const { t } = useLanguage();
-
+    const pathname = usePathname();
     const startAdventure = () => {
         setAdventureStarted(true);
 
-        const section = document.getElementById("projects");
-
-        if (!section) return;
-
-        section.scrollIntoView({
-            behavior: "smooth",
-        });
-    };;
+        smoothScrollToSection("projects", 0, 1100);
+    };
 
     useEffect(() => {
         if (adventureStarted) return;
@@ -33,12 +31,38 @@ export default function Hero() {
             }
         };
 
-        window.addEventListener("scroll", activate, { passive: true });
+        window.addEventListener("scroll", activate, {
+            passive: true,
+        });
 
         return () => {
             window.removeEventListener("scroll", activate);
         };
     }, [adventureStarted]);
+
+    useEffect(() => {
+        const hash = window.location.hash;
+
+        if (!hash) return;
+
+        const id = hash.replace("#", "");
+
+        const timeout = setTimeout(() => {
+            if (id) {
+                smoothScrollToSection(id, 128, 1100);
+            } else {
+                smoothScrollTo(0, 1100);
+            }
+
+            history.replaceState(
+                null,
+                "",
+                window.location.pathname
+            );
+        }, 150);
+
+        return () => clearTimeout(timeout);
+    }, [pathname]);
 
     return (
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
@@ -78,38 +102,38 @@ export default function Hero() {
             <button
                 onClick={startAdventure}
                 className="
-          group
-          relative
-          z-10
-          mt-8
-          h-14
-          w-full
-          max-w-xs
-          rounded-xl
-          bg-violet-500
-          font-semibold
-          text-white
-          transition-all
-          duration-300
-          hover:-translate-y-1
-          hover:bg-violet-400
-          hover:shadow-2xl
-          hover:shadow-violet-500/20
-          sm:w-64
-        "
+                    group
+                    relative
+                    z-10
+                    mt-8
+                    h-14
+                    w-full
+                    max-w-xs
+                    rounded-xl
+                    bg-violet-500
+                    font-semibold
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:bg-violet-400
+                    hover:shadow-2xl
+                    hover:shadow-violet-500/20
+                    sm:w-64
+                "
             >
                 <span
                     className="
-            absolute
-            inset-0
-            flex
-            items-center
-            justify-center
-            gap-2
-            transition-opacity
-            duration-300
-            group-hover:opacity-0
-          "
+                        absolute
+                        inset-0
+                        flex
+                        items-center
+                        justify-center
+                        gap-2
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-0
+                    "
                 >
                     <Swords className="h-5 w-5" />
                     {t.hero.button}
@@ -117,17 +141,17 @@ export default function Hero() {
 
                 <span
                     className="
-            absolute
-            inset-0
-            flex
-            items-center
-            justify-center
-            gap-2
-            opacity-0
-            transition-opacity
-            duration-300
-            group-hover:opacity-100
-          "
+                        absolute
+                        inset-0
+                        flex
+                        items-center
+                        justify-center
+                        gap-2
+                        opacity-0
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                    "
                 >
                     <ArrowRight className="h-5 w-5" />
                     {t.hero.buttonHover}
@@ -136,23 +160,9 @@ export default function Hero() {
 
             {/* Story */}
             <button
-                onClick={() => {
-                    const section = document.getElementById("mission");
-
-                    if (!section) return;
-
-                    const offset = 128;
-
-                    const y =
-                        section.getBoundingClientRect().top +
-                        window.pageYOffset -
-                        offset;
-
-                    window.scrollTo({
-                        top: y,
-                        behavior: "smooth",
-                    });
-                }}
+                onClick={() =>
+                    smoothScrollToSection("mission", 128, 1100)
+                }
                 className="relative z-10 mt-6 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
             >
                 {t.hero.story} →
