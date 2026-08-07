@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+
 import {
     smoothScrollTo,
     smoothScrollToSection,
@@ -9,7 +10,6 @@ import {
 
 export default function HashScrollHandler() {
     const pathname = usePathname();
-    const searchParams = useSearchParams();
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -33,7 +33,7 @@ export default function HashScrollHandler() {
         }, 150);
 
         return () => clearTimeout(timer);
-    }, [pathname, searchParams]);
+    }, [pathname]);
 
     return null;
 }
