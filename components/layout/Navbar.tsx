@@ -19,8 +19,8 @@ export default function Navbar() {
 
     const links = [
         { key: "about", href: "#about", label: t.navbar.about },
-        { key: "inventory", href: "#inventory", label: t.navbar.inventory },
         { key: "projects", href: "#projects", label: t.navbar.projects },
+        { key: "inventory", href: "#inventory", label: t.navbar.inventory },
     ];
 
     const handleLogoClick = (

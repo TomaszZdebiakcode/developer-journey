@@ -7,17 +7,16 @@ const en = {
     },
 
     hero: {
-        greeting: "Hi, I'm Tomasz",
-        available: "Available for opportunities",
+        eyebrow: "ARE YOU LOOKING FOR",
+        titleLine1: "Digital",
+        titleLine2: "Creator",
 
-        titleStart: "Building my",
-        titleHighlight: "Developer Journey.",
+        description1: "Crafting",
+        descriptionHighlight1: "products",
+        description2: "that people",
+        descriptionHighlight2: "remember.",
 
-        subtitle: "Turning ideas into products.",
-        description: "One quest at a time.",
-
-        button: "Continue Adventure",
-        buttonHover: "View Boss Battles",
+        button: "Contact on LinkedIn",
 
         story: "Read My Story",
     },
