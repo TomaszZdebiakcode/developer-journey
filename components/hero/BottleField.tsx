@@ -9,7 +9,9 @@ export default function BottleField() {
                 alt=""
                 width={180}
                 height={420}
+                sizes="180px"
                 className="
+                    hidden md:block
                     absolute
                     right-24
                     top-10
@@ -27,7 +29,9 @@ export default function BottleField() {
                 alt=""
                 width={190}
                 height={450}
+                sizes="190px"
                 className="
+                    hidden md:block
                     absolute
                     right-72
                     bottom-10
@@ -45,7 +49,9 @@ export default function BottleField() {
                 alt=""
                 width={170}
                 height={420}
+                sizes="170px"
                 className="
+                    hidden md:block
                     absolute
                     right-[-30px]
                     bottom-28
